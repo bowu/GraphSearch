@@ -30,7 +30,7 @@ utils.py:
   general utils such as data loader, accuracy function, and so on.
   
 (4)Results:
-  first round of training: GAT reaches the best performance at the 766th epoch. /test results: loss value = 0.6526, accuracy: 0.8420.
+  first round of training: GAT reaches the best performance at the 766th epoch. /test results: loss value = 0.6526, accuracy: 0.8420
   
   load the model in this epoch, revise the adjancency matrix, using the new adjancency matrix and original features for a second round of training.
   GAT reaches the best performance at the 724th epoch. /test results: loss_value = 0.7990, accuracy: 0.8110
@@ -45,7 +45,7 @@ utils.py:
         partition = np.partition(attention_combinenp.flatten(), -13264)[-13264]
         for id in np.ndindex(attention_combinenp.shape):
             if attention_combinenp[id] < partition:
-                attention_combinenp[id] = 0
+              attention_combinenp[id] = 0
         attention_combine = torch.from_numpy(attention_combinenp).type(torch.float32)
   
   % all non-zero elements in attention_combine are tranfered as new edges in resized adjacency matrix
