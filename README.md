@@ -36,7 +36,9 @@ utils.py:
   GAT reaches the best performance at the 724th epoch. /test results: loss_value = 0.7990, accuracy: 0.8110
   
   % the 2-hop attention matrix is simply defined as: attention2step = torch.mm(attention, attention.T), attention is the attention matrix for 1-hop.
+  
   % combined attention matrix is defined as attention_combine = attention2step + attention
+  
   % there are 13264 non-zero elements in attention, thus largest 13264 non-zero elemnets in attention_combine are selected.
         code:
         attention_combinenp = attention_combine.detach().cpu().numpy()
@@ -45,6 +47,7 @@ utils.py:
             if attention_combinenp[id] < partition:
                 attention_combinenp[id] = 0
         attention_combine = torch.from_numpy(attention_combinenp).type(torch.float32)
+  
   % all non-zero elements in attention_combine are tranfered as new edges in resized adjacency matrix
 
   tried to block all diagonal element in attention2step as 0, then calculated the summation with attention.
