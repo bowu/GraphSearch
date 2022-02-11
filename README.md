@@ -32,5 +32,8 @@ utils.py:
 select.py:
 resize the adjacency matrix with different number of edges.
 
+geotrain.py:
+pytorch-geometric scripts to run GAT neural networks, default setting are 30 runs enabling early stop features.
+
 
   
