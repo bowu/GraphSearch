@@ -33,7 +33,17 @@ select.py:
 resize the adjacency matrix with different number of edges.
 
 geotrain.py:
-pytorch-geometric scripts to run GAT neural networks, default setting are 30 runs enabling early stop features.
+pytorch-geometric scripts to run GAT neural networks, default settings are 30 runs enabling early stop features.
 
+gatv2train.py:
+pytorch-geometric scripts to run GATv2, default settings are 30 runs enabling early stop features.
 
-  
+gatv2train_load.py:
+1 layer 1 head GATv2 to search for the best epoch and save the attention weights.
+
+gatv2modi.py:
+1 layer 1 head GATv2 to revise the adjacency matrix, collaborating with gatv2_modi.py.
+
+geoselect.py:
+revise the adjacency matrix according to the attention weights for GATv2.
+
